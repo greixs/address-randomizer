@@ -36,10 +36,20 @@ export default class PostDetail extends Component {
     }
   }
 
-  componentDidMount() {
+  setStateOnProps() {
     this.setState({
       postItem: this.props.post
     });
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props !== prevProps) {
+      this.setStateOnProps();
+    }
+  }
+
+  componentDidMount() {
+    this.setStateOnProps();
   }
 
   render() {
@@ -48,11 +58,16 @@ export default class PostDetail extends Component {
     return (
       <div>
         {this.state.postItem !== null ? (
-          <div>
+          <div className="post-details">
             <h1 onClick={this.titleWasClicked}>{postItem.title}</h1>
             {showContent === true ? <p>{postItem.content}</p> : ""}
-            <button onClick={this.toggleContent}>Toggle Content Display</button>
-            <button onClick={() => this.props.didHandleRemove(postItem.id)}>
+            <button className="btn" onClick={this.toggleContent}>
+              Toggle Content Display
+            </button>
+            <button
+              className="btn"
+              onClick={() => this.props.didHandleRemove(postItem.id)}
+            >
               Remove Content Display
             </button>
           </div>

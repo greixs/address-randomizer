@@ -7,9 +7,17 @@ export default class PostList extends Component {
     super(props);
     this.handleDataCallback = this.handleDataCallback.bind(this);
     this.didHandleRemove = this.didHandleRemove.bind(this);
+    this.reverseOrder = this.reverseOrder.bind(this);
     this.state = {
       postList: []
     };
+  }
+
+  reverseOrder() {
+    this.setState({
+      postList: this.state.postList.reverse()
+    });
+    console.log(this.state.postList);
   }
 
   handleDataCallback(postItem) {
@@ -40,16 +48,15 @@ export default class PostList extends Component {
     const { postList } = this.state;
     return (
       <div>
+        <button className="btn" onClick={this.reverseOrder}> Reverse Order </button>
         {postList.map((item, index) => {
           return (
-            <div className="post-item">
-              <PostDetail
-                post={item}
-                key={`post-list-key ${index}`}
-                dataCallback={this.handleDataCallback}
-                didHandleRemove={this.didHandleRemove}
-              />
-            </div>
+            <PostDetail
+              post={item}
+              key={`post-list-key ${item.id}`}
+              dataCallback={this.handleDataCallback}
+              didHandleRemove={this.didHandleRemove}
+            />
           );
         })}
       </div>
