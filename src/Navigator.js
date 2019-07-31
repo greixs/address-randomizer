@@ -11,16 +11,19 @@ export default class Navigator extends Component {
         <nav>
           <ul className="nav__links">
             <li>
+              <Link to="/randomizer">Randomizer</Link>
+            </li>
+            <li>
+              <Link to="/youtube">Bored?</Link>
+            </li>
+            {/* <li>
               <Link to="/posts">PostList</Link>
             </li>
             <li>
               <Link to="/timer">Timer</Link>
-            </li>
+            </li>*/}
             <li>
               <Link to="/form">Form</Link>
-            </li>
-            <li>
-              <Link to="/youtube">Bored?</Link>
             </li>
           </ul>
         </nav>
