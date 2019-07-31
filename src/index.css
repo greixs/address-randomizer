@@ -1,3 +1,4 @@
+/* global style */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -25,9 +26,18 @@ h1,
 p,
 h3,
 button {
-  /* font-size: 16px; */
   color: #ecf0f1;
   text-decoration: none;
+}
+
+/* input autofill style */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #24252a inset !important;
+  -webkit-text-fill-color: #b300c4 !important;
 }
 
 /* navigation bar */
@@ -76,20 +86,24 @@ header button:hover {
   background-color: rgba(0, 136, 169, 0.8);
 }
 
-/* PostList */
+/* PostList & Form */
 
 .post-item {
   padding: 20px 0px;
 }
 
 .btn {
-  margin-left: 20px;
+  margin: 20px;
   padding: 9px 25px;
   background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+  background-color: rgba(0, 136, 169, 0.8);
 }
 
 /* post details */
@@ -100,4 +114,23 @@ header button:hover {
 
 .post-details button {
   margin-top: 10px;
+}
+
+/* Form */
+
+.input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid;
+  padding: 1em 0 0.8em;
+  text-align: center;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 300;
+  line-height: 1.5;
+  color: inherit;
+  outline: none;
+  /* &::placeholder { 
+      color: hsla(0, 0%, 100%, 0.5);
+  } */
 }

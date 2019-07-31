@@ -1,7 +1,9 @@
 import React from "react";
 import PostList from "./posts/PostList";
+import { AlertBox } from "./posts/Wrapper";
 import Youtube from "./youtube/Youtube";
 import Timer from "./timer/Timer";
+import Form from "./form/Form";
 import Navigator from "./Navigator";
 import PageNotFound from "./PageNotFound";
 import "./App.css";
@@ -19,13 +21,18 @@ function App() {
     <div className="App">
       <Router>
         <Navigator />
+
         <Switch force>
-          <Route path="/posts" component={PostList} />
+          <Route
+            path="/posts"
+            component={props => <PostList {...props} AlertBox={AlertBox} />}
+          />
           <Route
             path="/timer"
             component={props => <Timer {...props} startCount={5} />}
           />
           <Route path="/youtube" component={Youtube} />
+          <Route path="/form" component={Form} />
           <Route component={PageNotFound} />
         </Switch>
       </Router>

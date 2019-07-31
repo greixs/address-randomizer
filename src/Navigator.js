@@ -17,6 +17,9 @@ export default class Navigator extends Component {
               <Link to="/timer">Timer</Link>
             </li>
             <li>
+              <Link to="/form">Form</Link>
+            </li>
+            <li>
               <Link to="/youtube">Bored?</Link>
             </li>
           </ul>

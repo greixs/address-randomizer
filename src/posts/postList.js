@@ -61,8 +61,10 @@ export default class PostList extends Component {
 
   render() {
     const { postList } = this.state;
+    const { AlertBox } = this.props;
     return (
       <div>
+        <AlertBox>This is a test</AlertBox>
         <button className="btn" onClick={this.reverseOrder}>
           Reverse Order
         </button>
