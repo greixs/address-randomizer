@@ -14,13 +14,13 @@ export default class PostDetail extends Component {
 
   titleWasClicked(event) {
     event.preventDefault();
-    let newPostItem = this.props.post;
-    newPostItem["title"] = "new title";
-    this.setState({
-      postItem: newPostItem
-    });
-    const { dataCallback } = this.props;
-    dataCallback(newPostItem);
+    // let newPostItem = this.props.post;
+    // newPostItem["title"] = "new title";
+    // this.setState({
+    //   postItem: newPostItem
+    // });
+    // const { dataCallback } = this.props;
+    // dataCallback(newPostItem);
   }
 
   toggleContent(event) {

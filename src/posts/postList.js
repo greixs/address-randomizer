@@ -5,38 +5,53 @@ import PostDetail from "./PostDetail";
 export default class PostList extends Component {
   constructor(props) {
     super(props);
-    this.handleDataCallback = this.handleDataCallback.bind(this);
-    this.didHandleRemove = this.didHandleRemove.bind(this);
-    this.reverseOrder = this.reverseOrder.bind(this);
     this.state = {
-      postList: []
+      postList: [],
+      orderOldestFirst: false
     };
   }
 
-  reverseOrder() {
+  orderByDate = () => {
+    if (!this.state.orderOldestFirst) {
+      this.setState({
+        orderOldestFirst: !this.state.orderOldestFirst,
+        postList: this.state.postList.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        )
+      });
+    } else {
+      this.setState({
+        orderOldestFirst: !this.state.orderOldestFirst,
+        postList: this.state.postList.sort(
+          (a, b) => new Date(a.date) - new Date(b.date)
+        )
+      });
+    }
+  };
+
+  reverseOrder = () => {
     this.setState({
       postList: this.state.postList.reverse()
     });
-    console.log(this.state.postList);
-  }
+  };
 
-  handleDataCallback(postItem) {
+  handleDataCallback = postItem => {
     console.log(postItem);
     let currentPostList = this.state.postList;
     currentPostList.push(postItem);
     this.setState({
       postList: currentPostList
     });
-  }
+  };
 
-  didHandleRemove(postItem) {
+  didHandleRemove = postItem => {
     const newPostList = this.state.postList.filter(
       item => item.id !== postItem
     );
     this.setState({
       postList: newPostList
     });
-  }
+  };
 
   componentDidMount() {
     this.setState({
@@ -48,7 +63,12 @@ export default class PostList extends Component {
     const { postList } = this.state;
     return (
       <div>
-        <button className="btn" onClick={this.reverseOrder}> Reverse Order </button>
+        <button className="btn" onClick={this.reverseOrder}>
+          Reverse Order
+        </button>
+        <button className="btn" onClick={this.orderByDate}>
+          Order By Date
+        </button>
         {postList.map((item, index) => {
           return (
             <PostDetail

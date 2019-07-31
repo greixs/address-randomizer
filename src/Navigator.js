@@ -14,7 +14,10 @@ export default class Navigator extends Component {
               <Link to="/posts">PostList</Link>
             </li>
             <li>
-              <Link to="/youtube">Youtube</Link>
+              <Link to="/timer">Timer</Link>
+            </li>
+            <li>
+              <Link to="/youtube">Bored?</Link>
             </li>
           </ul>
         </nav>
