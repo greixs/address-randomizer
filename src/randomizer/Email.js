@@ -52,7 +52,7 @@ export default class Email extends Component {
       var full_email = "";
       for (var j = 0; j < username_length - 1; j++) {
         full_email += hostname[j];
-        if (bin[j] == 1) {
+        if (bin[j] === 1) {
           full_email += ".";
         }
       }
@@ -74,7 +74,11 @@ export default class Email extends Component {
   render() {
     return (
       <div>
-        <h3>Email</h3>
+        <h1>Email</h1>
+        <p>
+          generate different email that will directs to same email. This is used
+          with email dot trick technique.
+        </p>
         <form>
           <input
             type="email"

@@ -17,7 +17,7 @@ code {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #24252a;
+  background-color: #24252a !important;
 }
 
 li,
@@ -31,26 +31,33 @@ button {
   text-decoration: none;
 }
 
+nav {
+  background-color: #1b1b1b !important;
+  width: auto;
+  box-shadow: none;
+}
+
 pre {
   font-size: 16px;
 }
 
 input {
+  width: 250px !important;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid;
-  border-color: rgba(236, 240, 241, 0.4);
+  border-bottom: 1px solid !important;
+  border-color: rgba(236, 240, 241, 0.4) !important;
   padding: 1em 0 0.8em;
   text-align: center;
   font-size: 18px;
   font-family: inherit;
   font-weight: 300;
   line-height: 1.5;
-  color: #ecf0f1;
+  color: #ecf0f1 !important;
   outline: none;
 }
 input:focus {
-  border-color: rgba(236, 240, 241, 1);
+  border-color: rgba(236, 240, 241, 1) !important;
 }
 
 /* input autofill style */
@@ -70,12 +77,18 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 30px 10%;
+  background-color: #1b1b1b !important;
+}
+
+header a {
+  background-color: #1b1b1b !important;
 }
 
 .logo {
   cursor: pointer;
   margin-right: auto;
   height: 50px;
+  background-color: #1b1b1b !important;
 }
 
 .nav__links {
@@ -85,6 +98,7 @@ header {
 .nav__links li {
   display: inline-block;
   padding: 0px 20px;
+  background-color: #1b1b1b !important;
 }
 
 .nav__links li a {
@@ -98,7 +112,7 @@ header {
 header button {
   margin-left: 20px;
   padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
+  background-color: rgba(0, 136, 169, 1) !important;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -110,32 +124,41 @@ header button:hover {
 
 /* FORM */
 
-/* .post-item {
-    padding: 20px 0px;
-  } */
-
 .btn {
   margin: 20px;
-  padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
+  /* padding: 9px 25px; */
+  background-color: rgba(0, 136, 169, 1) !important;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 .btn:hover {
-  background-color: rgba(0, 136, 169, 0.8);
+  background-color: rgba(0, 136, 169, 0.8) !important;
 }
 .btn:disabled {
-  background-color: rgba(0, 136, 169, 0.3);
+  background-color: rgba(0, 136, 169, 0.3) !important;
 }
 
-/* post details */
+/* GENERATORS */
 
-/* .post-details {
-  padding: 30px 0px;
-}
-
-.post-details button {
-  margin-top: 10px;
+/* .row {
+  overflow: hidden;
+  padding: 10px;
 } */
+
+/* .column {
+  flex: 50%;
+  float: left;
+  width: 50%;
+} */
+
+/* .item-container {
+} */
+
+.item-label {
+  color: #ecf0f1;
+  display: inline-block;
+  width: 150px;
+  font-size: 16px;
+}

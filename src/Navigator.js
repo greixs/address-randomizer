@@ -14,21 +14,15 @@ export default class Navigator extends Component {
               <Link to="/randomizer">Randomizer</Link>
             </li>
             <li>
+              <Link to="/generator">Generators</Link>
+            </li>
+            <li>
               <Link to="/youtube">Bored?</Link>
-            </li>
-            {/* <li>
-              <Link to="/posts">PostList</Link>
-            </li>
-            <li>
-              <Link to="/timer">Timer</Link>
-            </li>*/}
-            <li>
-              <Link to="/form">Form</Link>
             </li>
           </ul>
         </nav>
         <a href="/" className="cta">
-          <button>Login</button>
+          <button>Home</button>
         </a>
       </header>
     );
