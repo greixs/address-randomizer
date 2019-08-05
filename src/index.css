@@ -109,6 +109,10 @@ header a {
   color: #0088a9;
 }
 
+.menu {
+  display: none;
+}
+
 header button {
   margin-left: 20px;
   padding: 9px 25px;
@@ -120,6 +124,68 @@ header button {
 }
 header button:hover {
   background-color: rgba(0, 136, 169, 0.8);
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: inherit;
+  }
+}
+
+/* MOBILE NAVIGATOR */
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  background-color: #1b1b1b !important;
+  overflow: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.overlay-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay li {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+}
+
+.overlay li a:hover,
+.overlay li a:focus {
+  color: #0088a9 !important;
+  transition: all 0.3s ease 0s;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450 px) {
+  .overlay li {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
 }
 
 /* FORM */
