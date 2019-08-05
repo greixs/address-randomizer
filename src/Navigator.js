@@ -7,16 +7,31 @@ export default class Navigator extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      menuClicked: false
+    };
     this.mobileMenu = React.createRef();
   }
 
-  openNav = () => {
-    this.mobileMenu.current.style.width = "100%";
+  toggleNav = () => {
+    if (this.state.menuClicked) {
+      this.mobileMenu.current.style.width = "0";
+      this.setState({
+        menuClicked: false
+      });
+    } else {
+      this.mobileMenu.current.style.width = "100%";
+      this.setState({
+        menuClicked: true
+      });
+    }
   };
 
   closeNav = () => {
     this.mobileMenu.current.style.width = "0";
+    this.setState({
+      menuClicked: false
+    });
   };
 
   render() {
@@ -41,7 +56,7 @@ export default class Navigator extends Component {
             <button>Home</button>
           </a>
 
-          <a href="#" onClick={this.openNav} className="menu">
+          <a href="#" onClick={this.toggleNav} className="menu">
             <button>Menu</button>
           </a>
         </header>
